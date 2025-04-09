@@ -22,4 +22,4 @@ python -m pip install --no-cache-dir --upgrade pip
 python -m pip install --no-cache-dir endstone
 
 # Run 'endstone'
-endstone
+python -m endstone -s .
