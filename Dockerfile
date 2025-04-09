@@ -23,7 +23,6 @@ WORKDIR /home/endstone
 # Install the endstone and clean up
 RUN python -m pip install --no-cache-dir --upgrade pip \
     && pip install --no-cache-dir endstone \
-    && rm ./*.whl
 
 # Switch to non-root user
 USER endstone
