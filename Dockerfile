@@ -16,9 +16,5 @@ WORKDIR /home/container
 COPY start.sh ./
 RUN chmod +x start.sh
 
-# Install the endstone and clean up
-RUN python -m pip install --no-cache-dir --upgrade pip \
-    && pip install --no-cache-dir endstone
-
 # Define the default command to run the application
 ENTRYPOINT ["./start.sh"]
