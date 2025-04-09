@@ -19,4 +19,4 @@ RUN python -m pip install --no-cache-dir --upgrade pip \
     && pip install --no-cache-dir endstone
 
 # Define the default command to run the application
-CMD ["python -m endstone -s ."]
+CMD ["python", "-m", "endstone", "-s", "."]
