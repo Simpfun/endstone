@@ -17,4 +17,11 @@ COPY start.sh ./
 RUN chmod +x start.sh
 
 # Define the default command to run the application
-ENTRYPOINT ["./start.sh"]
+ENTRYPOINT ["sh", "-c", \
+    "VENV_DIR=\"$PWD/venv\" && " \
+    "if [ ! -d \"$VENV_DIR\" ]; then python -m venv \"$VENV_DIR\"; fi && " \
+    "source \"$VENV_DIR/bin/activate\" && " \
+    "python -m pip install --no-cache-dir --upgrade pip && " \
+    "python -m pip install --no-cache-dir endstone && " \
+    "exec ./start.sh" \
+]
