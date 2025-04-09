@@ -11,12 +11,14 @@ RUN apt-get update -y -qq \
     && apt-get clean -y -qq \
     && rm -rf /var/lib/apt/lists/*
 
-# Define working directory
-WORKDIR /home/endstone
+# Initialize working directory
+WORKDIR /home/container
+COPY start.sh ./
+RUN chmod +x start.sh
 
 # Install the endstone and clean up
 RUN python -m pip install --no-cache-dir --upgrade pip \
     && pip install --no-cache-dir endstone
 
 # Define the default command to run the application
-CMD ["python", "-m", "endstone", "-s", "."]
+ENTRYPOINT ["./start.sh"]
