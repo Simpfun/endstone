@@ -13,7 +13,7 @@ RUN apt-get update -y -qq \
 
 # Initialize the runtime
 COPY --chmod=755 entrypoint.sh /usr/local/bin/entrypoint.sh
-COPY --chmod=755 start.sh /home/container
+COPY --chmod=755 start.sh /home/container/start.sh
 
 WORKDIR /home/container
 
