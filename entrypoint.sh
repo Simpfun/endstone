@@ -24,6 +24,7 @@ source "$VENV_DIR/bin/activate"
 sleep 1
 
 # Upgrade pip to the latest version
+echo -e "\n"
 python -m pip install --no-cache-dir -i https://repo.huaweicloud.com/repository/pypi/simple --trusted-host repo.huaweicloud.com --upgrade pip
 
 # Check if start.sh exists in target directory
@@ -39,4 +40,5 @@ chmod +x /home/container/start.sh
 
 # Launch the application script
 echo -e "\n正在执行启动脚本..."
+echo -e "\n"
 exec /home/container/start.sh
