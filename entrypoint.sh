@@ -7,26 +7,20 @@ VENV_DIR="$PWD/venv"
 printf "正在检查虚拟环境...\n"
 printf "\n"
 if [ ! -d "$VENV_DIR" ]; then
-    sleep 1
     printf "未找到虚拟环境，正在初始化...\n"
     python -m venv "$VENV_DIR"
     printf "虚拟环境初始化完毕。\n"
 else
-    sleep 1
     printf "虚拟环境检查完毕。\n"
 fi
 
 printf "\n"
-
-sleep 1
 
 # Activate the virtual environment
 printf "正在激活虚拟环境...\n"
 source "$VENV_DIR/bin/activate"
 
 printf "\n"
-
-sleep 1
 
 # Upgrade pip to the latest version
 python -m pip install --no-cache-dir -i https://repo.huaweicloud.com/repository/pypi/simple --trusted-host repo.huaweicloud.com --upgrade pip
@@ -42,10 +36,7 @@ fi
 # Ensure the start script is executable
 chmod +x /home/container/start.sh
 
-sleep 1
 printf "启动脚本检查完毕...\n"
-
-sleep 1
 
 printf "\n"
 
